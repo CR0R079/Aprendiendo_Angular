@@ -1,6 +1,126 @@
-<div>
-<u>
-<h1> Hola , guardado xd </h1>
-</u>  
-<img src="https://res.cloudinary.com/dk2y2ujsp/image/upload/v1756703845/Captura_de_pantalla_2025-08-31_162258_yxiaas.png" alt="img1">
-</div>
+<!-- app.component.html -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#" class="nav-logo">EUD</a>
+        <ul class="nav-menu" [class.active]="mobileMenuActive">
+            <li class="nav-item"><a href="#inicio" (click)="closeMobileMenu()">Inicio</a></li>
+            <li class="nav-item"><a href="#mision" (click)="closeMobileMenu()">Misión</a></li>
+            <li class="nav-item"><a href="#programas" (click)="closeMobileMenu()">Programas</a></li>
+            <li class="nav-item"><a href="#galeria" (click)="closeMobileMenu()">Galería</a></li>
+            <li class="nav-item"><a href="#contacto" (click)="closeMobileMenu()">Contacto</a></li>
+        </ul>
+        <div class="hamburger" (click)="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="main-content">
+    <div class="Titulo-pagina">
+        <h1>Educa Union Diversica</h1>
+    </div>
+
+    <!-- CAROUSEL -->
+    <div class="carousel-container" 
+         (mouseenter)="stopAutoplay()" 
+         (mouseleave)="startAutoplay()">
+        <div class="carousel" id="carousel">
+            <div class="carousel-slide">
+                <img src="https://res.cloudinary.com/dk2y2ujsp/image/upload/v1756884770/62b62248317de-bp-cover-image_jllogj.jpg" alt="Educación Inclusiva">
+                <div class="carousel-overlay">
+                    <h3 class="carousel-title">Educación Inclusiva</h3>
+                    <p class="carousel-description">Creando espacios donde todos los estudiantes pueden aprender y crecer juntos.</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="https://res.cloudinary.com/dk2y2ujsp/image/upload/v1756884939/iStock-870035748-1024x683_tebma9.jpg" alt="Diversidad en Acción">
+                <div class="carousel-overlay">
+                    <h3 class="carousel-title">Diversidad en Acción</h3>
+                    <p class="carousel-description">Promoviendo la diversidad como fortaleza en nuestras comunidades educativas.</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Comunidad Unida">
+                <div class="carousel-overlay">
+                    <h3 class="carousel-title">Comunidad Unida</h3>
+                    <p class="carousel-description">Trabajando con líderes comunitarios para implementar programas inclusivos.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-nav carousel-prev" (click)="moveSlide(-1); onUserInteraction()">‹</button>
+        <button class="carousel-nav carousel-next" (click)="moveSlide(1); onUserInteraction()">›</button>
+        <div class="carousel-indicators">
+            <span class="indicator" 
+                  [class.active]="currentSlideIndex === 0"
+                  (click)="currentSlide(1); onUserInteraction()"></span>
+            <span class="indicator" 
+                  [class.active]="currentSlideIndex === 1"
+                  (click)="currentSlide(2); onUserInteraction()"></span>
+            <span class="indicator" 
+                  [class.active]="currentSlideIndex === 2"
+                  (click)="currentSlide(3); onUserInteraction()"></span>
+        </div>
+    </div>
+
+    <div class="Sub-Title">
+        <h2>Nuestra Misión</h2>
+        <b>
+            <p>
+                Educa Union Diversica es una organización sin fines de lucro dedicada a promover la educación inclusiva y la diversidad en las escuelas y comunidades. Nuestra misión es crear un entorno donde todos los estudiantes, independientemente de sus antecedentes, habilidades o identidades, puedan aprender y crecer juntos. Creemos que la diversidad es una fortaleza y que la inclusión es fundamental para el desarrollo de una sociedad justa y equitativa. Trabajamos con líderes comunitarios para implementar programas y políticas que fomenten la aceptación, el respeto y la colaboración entre todos los miembros de la comunidad educativa.
+            </p>
+        </b>
+    </div>
+
+    <div class="Img-principio">
+        <img src="https://res.cloudinary.com/dk2y2ujsp/image/upload/v1756884770/62b62248317de-bp-cover-image_jllogj.jpg" alt="Img-escuelas">
+        <img src="https://res.cloudinary.com/dk2y2ujsp/image/upload/v1756884939/iStock-870035748-1024x683_tebma9.jpg" alt="Img-escuelas2">
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Educa Union Diversica</h3>
+                <p>Promoviendo la educación inclusiva y la diversidad para crear comunidades más justas y equitativas.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">📘</a>
+                    <a href="#" title="Twitter">🐦</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="LinkedIn">💼</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <p><a href="#inicio">Inicio</a></p>
+                <p><a href="#mision">Nuestra Misión</a></p>
+                <p><a href="#programas">Programas</a></p>
+                <p><a href="#galeria">Galería</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>📧 info@educauniondiversica.org</p>
+                <p>📞 +51 (01) 234-5678</p>
+                <p>📍 Lima, Perú</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Programas</h3>
+                <p><a href="#">Educación Inclusiva</a></p>
+                <p><a href="#">Capacitación Docente</a></p>
+                <p><a href="#">Talleres Comunitarios</a></p>
+                <p><a href="#">Investigación</a></p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Educa Union Diversica. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
