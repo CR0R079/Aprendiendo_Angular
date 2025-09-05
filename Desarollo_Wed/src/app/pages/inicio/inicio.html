@@ -1,0 +1,67 @@
+<main class="main-content">
+    <div class="Titulo-pagina">
+        <h1>Educa Union Diversica</h1>
+    </div>
+
+    <!-- CARRUSEL MEJORADO -->
+    <div class="carousel-container"
+         (mouseenter)="stopAutoplay()"
+         (mouseleave)="startAutoplay()">
+        <div class="carousel" id="carousel">
+            <div class="carousel-slide">
+                <img src="https://res.cloudinary.com/dk2y2ujsp/image/upload/v1756884770/62b62248317de-bp-cover-image_jllogj.jpg" alt="Educación Inclusiva">
+                <div class="carousel-overlay">
+                    <h3 class="carousel-title">Educación Inclusiva</h3>
+                    <p class="carousel-description">Creando espacios donde todos los estudiantes pueden aprender y crecer juntos.</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="https://res.cloudinary.com/dk2y2ujsp/image/upload/v1756884939/iStock-870035748-1024x683_tebma9.jpg" alt="Diversidad en Acción">
+                <div class="carousel-overlay">
+                    <h3 class="carousel-title">Diversidad en Acción</h3>
+                    <p class="carousel-description">Promoviendo la diversidad como fortaleza en nuestras comunidades educativas.</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Comunidad Unida">
+                <div class="carousel-overlay">
+                    <h3 class="carousel-title">Comunidad Unida</h3>
+                    <p class="carousel-description">Trabajando con líderes comunitarios para implementar programas inclusivos.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-nav carousel-prev" (click)="moveSlide(-1); onUserInteraction()">‹</button>
+        <button class="carousel-nav carousel-next" (click)="moveSlide(1); onUserInteraction()">›</button>
+        <div class="carousel-indicators">
+            <span class="indicator"
+                  [class.active]="currentSlideIndex === 0"
+                  (click)="currentSlide(1); onUserInteraction()"></span>
+            <span class="indicator"
+                  [class.active]="currentSlideIndex === 1"
+                  (click)="currentSlide(2); onUserInteraction()"></span>
+            <span class="indicator"
+                  [class.active]="currentSlideIndex === 2"
+                  (click)="currentSlide(3); onUserInteraction()"></span>
+        </div>
+    </div>
+
+    <!-- Misión -->
+    <section class="Sub-Title">
+        <h2>Nuestra Misión</h2>
+        <p>
+            Educa Union Diversica es una organización sin fines de lucro dedicada a promover la educación inclusiva y la diversidad en las escuelas y comunidades. Nuestra misión es crear un entorno donde todos los estudiantes, independientemente de sus antecedentes, habilidades o identidades, puedan aprender y crecer juntos. Creemos que la diversidad es una fortaleza y que la inclusión es fundamental para el desarrollo de una sociedad justa y equitativa. Trabajamos con líderes comunitarios para implementar programas y políticas que fomenten la aceptación, el respeto y la colaboración entre todos los miembros de la comunidad educativa.
+        </p>
+    </section>
+
+    <!-- Imágenes destacadas tipo cards -->
+    <section class="Img-principio">
+        <div class="img-card">
+            <img src="https://res.cloudinary.com/dk2y2ujsp/image/upload/v1756884770/62b62248317de-bp-cover-image_jllogj.jpg" alt="Educación Inclusiva">
+            <div class="img-caption">Educación Inclusiva</div>
+        </div>
+        <div class="img-card">
+            <img src="https://res.cloudinary.com/dk2y2ujsp/image/upload/v1756884939/iStock-870035748-1024x683_tebma9.jpg" alt="Diversidad en Acción">
+            <div class="img-caption">Diversidad en Acción</div>
+        </div>
+    </section>
+</main>

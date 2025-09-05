@@ -1,0 +1,12 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Asegúrate de que el contenido debajo del navbar tenga margen superior */
+.main-content, .mision-section, .galeria-section, .programas-section, .contacto-section {
+    margin-top: 100px; /* Ajusta este valor si tu navbar es más alto */
+}

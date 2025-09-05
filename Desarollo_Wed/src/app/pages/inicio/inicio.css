@@ -1,0 +1,208 @@
+.main-content {
+    margin-top: 80px; /* Espacio para el navbar fijo */
+    min-height: calc(100vh - 160px);
+    background: #f6f8fc;
+    padding-bottom: 40px;
+}
+
+/* Título principal */
+.Titulo-pagina h1 {
+    text-align: center;
+    color: rgb(235, 142, 192);
+    font-family: 'Segoe UI', "Times New Roman", serif;
+    font-size: 62px;
+    margin: 44px 10px 24px 10px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(44,62,80,0.08);
+}
+
+/* Carrusel Mejorado */
+.carousel-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(44, 62, 80, 0.13);
+    background: #fff;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(.77,.2,.45,1.01);
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    border-radius: 18px 18px 0 0;
+}
+
+.carousel-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.79));
+    color: white;
+    padding: 32px 32px 18px 32px;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 4px 24px rgba(44,62,80,0.07);
+}
+
+.carousel-title {
+    font-size: 29px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.carousel-description {
+    font-size: 17px;
+    opacity: 0.94;
+    line-height: 1.5;
+}
+
+/* Flechas */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(61, 86, 242,0.95);
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 28px;
+    color: #fff;
+    box-shadow: 0 2px 14px rgba(61,86,242,0.07);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.carousel-nav:hover {
+    background: #fff;
+    color: rgb(61, 86, 242);
+    transform: translateY(-50%) scale(1.08);
+    box-shadow: 0 6px 18px rgba(61,86,242,0.13);
+}
+
+.carousel-prev { left: 22px; }
+.carousel-next { right: 22px; }
+
+/* Indicadores */
+.carousel-indicators {
+    position: absolute;
+    bottom: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+}
+
+.indicator {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(61,86,242,0.3);
+    cursor: pointer;
+    transition: background 0.3s;
+    border: 2px solid rgba(61,86,242,0.15);
+}
+
+.indicator.active {
+    background: rgb(235, 142, 192);
+    border: 2px solid #fff;
+}
+
+/* Misión */
+.Sub-Title {
+    max-width: 950px;
+    margin: 44px auto 0 auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 18px rgba(44,62,80,0.08);
+    padding: 32px 32px 22px 32px;
+}
+
+.Sub-Title h2 {
+    color: rgb(235, 142, 192);
+    font-family: 'Segoe UI', "Times New Roman", serif;
+    font-size: 44px;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.Sub-Title p {
+    text-align: justify;
+    color: rgb(61, 86, 242);
+    font-family: 'Segoe UI', 'Times New Roman', serif;
+    font-size: 22px;
+    line-height: 1.65;
+    margin-bottom: 0;
+}
+
+/* Imágenes tipo cards */
+.Img-principio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 26px;
+    padding: 42px 20px;
+    max-width: 1100px;
+    margin: 0 auto 0 auto;
+}
+
+.img-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 14px rgba(61,86,242,0.09);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 12px 10px 12px;
+    transition: box-shadow 0.2s;
+}
+
+.img-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+    transition: transform 0.3s;
+}
+
+.img-card:hover {
+    box-shadow: 0 6px 22px rgba(61,86,242,0.18);
+}
+
+.img-card img:hover {
+    transform: scale(1.03);
+}
+
+.img-caption {
+    margin-top: 12px;
+    font-size: 18px;
+    color: rgb(61, 86, 242);
+    font-weight: 600;
+    text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .Titulo-pagina h1 { font-size: 44px; }
+    .Sub-Title h2 { font-size: 30px; }
+    .Sub-Title { padding: 22px 12px; }
+    .carousel img { height: 230px; }
+    .Img-principio { grid-template-columns: 1fr; gap: 18px; padding: 18px 6px; }
+    .img-card img { height: 180px; }
+}
